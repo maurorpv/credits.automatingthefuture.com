@@ -2,36 +2,36 @@
 
 Free, public notes on AI and cloud credits for **unincorporated indie hackers**.
 
-This is not a product. There is no checkout. We do not issue credits. Official apply links go to the provider.
+This is not a product. There is no checkout. We do not issue credits.
 
-Live (once DNS + Pages are on): https://credits.automatingthefuture.com
+## Hosting
 
-## What is here
+The site is a static Worker on Cloudflare (Workers Static Assets), not GitHub Pages.
 
-- Homepage: honesty rules, a realistic stack, dated program cards
-- Coming soon placeholders: non-US founders, students, voice/video, expiry calendar
-- `data/programs.json`: the same catalog as structured data
-- `method.html`: how listings are chosen
+- Zone already on Cloudflare: `automatingthefuture.com`
+- Intended hostname: `https://credits.automatingthefuture.com`
+- Preview: `https://credits-automatingthefuture.maurorpv.workers.dev` after first deploy
 
-## Publish on GitHub Pages + custom subdomain
+### Deploy
 
-1. Repo **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / root (`/`)
-4. At your domain registrar, add a CNAME:
+From this repo:
 
-   ```
-   credits.automatingthefuture.com  →  maurorpv.github.io
-   ```
+```bash
+npx wrangler deploy
+```
 
-5. In Pages, add custom domain `credits.automatingthefuture.com` and wait for HTTPS.
+Wrangler will:
 
-The `CNAME` file in this repo is already set.
+1. Upload the HTML/CSS/JS/JSON as Worker assets
+2. Create DNS + certificate for `credits.automatingthefuture.com` (custom domain)
+3. Publish `credits-automatingthefuture.maurorpv.workers.dev`
 
-## Edit a listing
+Do **not** add a CNAME to `*.github.io`. The Worker custom domain creates the DNS record itself.
 
-Change `data/programs.json` **and** the `PROGRAMS` array in `index.html` (keep them in sync). Update the Checked date when you re-verify an official URL.
+### Edit listings
+
+Change `data/programs.json` and bump the date in `app.js`. Redeploy.
 
 ## License
 
-Content is provided as-is, no warranty. Program terms belong to the providers.
+Content as-is. Program terms belong to the providers.
