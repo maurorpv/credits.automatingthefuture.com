@@ -1,20 +1,25 @@
 # credits.automatingthefuture.com
 
-Dated notes on official AI and cloud programs a person can start with an email.
+Dated public notes on official AI and cloud programs a solo, unincorporated builder can start with a personal email.
 
 Live: https://credits.automatingthefuture.com
 
+Every apply link goes to the provider. This repo does not issue credits or sit in front of official pages.
+
 ## What’s here
 
-- Homepage: honesty rules and dated program cards
-- `/programs/{id}.html`: usage sketch for each listing
-- Coming soon: non-US founders, students, voice/video, expiry calendar
-- `data/programs.json`: the catalog
-- `method.html`: how listings are chosen and kept current
+- `index.html` — honesty rules and the card list
+- `programs/{id}.html` — one usage sketch per program
+- `data/programs.json` — source of truth for cards and pages
+- `method.html` — how listings are added, checked, and retired
 
-## Edit a listing
+## How it stays current
 
-Change `data/programs.json`, rebuild the dedicated page, and refresh the `checked` date when you re-open an official URL. Details: `method.html#maintenance`.
+1. Edit `data/programs.json` (limits, catch, official URL, `checked` date).
+2. Rebuild dedicated pages with `node build.mjs`.
+3. Upload the changed files to the site KV namespace.
+
+Full rules: https://credits.automatingthefuture.com/method.html
 
 ## License
 
