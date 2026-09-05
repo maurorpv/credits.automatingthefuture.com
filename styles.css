@@ -1,0 +1,82 @@
+:root {
+  --paper: #f4efe4;
+  --ink: #1c1914;
+  --muted: #5c564c;
+  --line: #d9d1c3;
+  --accent: #0f6e6b;
+  --accent-soft: #d7eceb;
+  --warn: #8a4b12;
+  --warn-soft: #f3e3d2;
+  --skip: #6b3030;
+  --skip-soft: #f0dcdc;
+  --card: #fffdf8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+}
+code, .mono, button, .tag, nav a, .btn {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+a { color: var(--accent); }
+header, main, footer { width: min(980px, calc(100% - 2rem)); margin: 0 auto; }
+header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 1.4rem 0 1rem; border-bottom: 1px solid var(--line);
+  gap: 1rem; flex-wrap: wrap;
+}
+.brand { font-weight: 700; letter-spacing: 0.02em; text-decoration: none; color: var(--ink); }
+.brand span { color: var(--accent); }
+nav { display: flex; gap: 1rem; font-size: 0.82rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--ink); }
+.hero { padding: 2.4rem 0 1.2rem; }
+.kicker { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.6rem; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 0.8rem; font-weight: 700; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 42rem; margin: 0; }
+.honesty { background: var(--card); border: 1px solid var(--line); padding: 1.1rem 1.2rem; margin: 1.6rem 0 2rem; }
+.honesty h2 { margin: 0 0 0.6rem; font-size: 1rem; }
+.honesty ul { margin: 0; padding-left: 1.2rem; }
+.honesty li { margin: 0.25rem 0; }
+h2 { font-size: 1.35rem; margin: 2.2rem 0 0.7rem; }
+h3 { font-size: 1.05rem; margin: 0 0 0.35rem; }
+.stack { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+@media (max-width: 700px) { .stack, .soon { grid-template-columns: 1fr; } }
+.panel { background: var(--card); border: 1px solid var(--line); padding: 1rem 1.1rem; }
+.panel p { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.95rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0 1rem; }
+.filters button {
+  background: transparent; border: 1px solid var(--line); color: var(--ink);
+  padding: 0.35rem 0.7rem; cursor: pointer; font-size: 0.78rem;
+}
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.cards { display: grid; gap: 0.8rem; }
+article.card { background: var(--card); border: 1px solid var(--line); padding: 1rem 1.1rem; }
+article.card.skip { background: #fbf6f6; }
+.row { display: flex; justify-content: space-between; gap: 0.8rem; align-items: flex-start; flex-wrap: wrap; }
+.tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.tag {
+  font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 0.15rem 0.4rem; background: var(--accent-soft); color: var(--accent);
+}
+.tag.credit { background: var(--warn-soft); color: var(--warn); }
+.tag.caveat, .tag.cardyes { background: #eceae4; color: var(--muted); }
+.tag.skip { background: var(--skip-soft); color: var(--skip); }
+.meta { color: var(--muted); font-size: 0.92rem; margin: 0.45rem 0; }
+.actions { margin-top: 0.7rem; display: flex; gap: 0.7rem; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; padding: 0.4rem 0.7rem; font-size: 0.78rem; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.soon { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+.soon .panel { opacity: 0.85; }
+.badge {
+  display: inline-block; font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--muted); border: 1px solid var(--line);
+  padding: 0.1rem 0.35rem; margin-left: 0.4rem;
+}
+footer { border-top: 1px solid var(--line); padding: 1.4rem 0 2.4rem; margin-top: 2.6rem; color: var(--muted); font-size: 0.9rem; }
+footer p { margin: 0.3rem 0; }
