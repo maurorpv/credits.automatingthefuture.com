@@ -1,37 +1,21 @@
 # credits.automatingthefuture.com
 
-Free, public notes on AI and cloud credits for **unincorporated indie hackers**.
+Dated notes on official AI and cloud programs a person can start with an email.
 
-This is not a product. There is no checkout. We do not issue credits.
+Live: https://credits.automatingthefuture.com
 
-## Hosting
+## What’s here
 
-The site is a static Worker on Cloudflare (Workers Static Assets), not GitHub Pages.
+- Homepage: honesty rules and dated program cards
+- `/programs/{id}.html`: usage sketch for each listing
+- Coming soon: non-US founders, students, voice/video, expiry calendar
+- `data/programs.json`: the catalog
+- `method.html`: how listings are chosen and kept current
 
-- Zone already on Cloudflare: `automatingthefuture.com`
-- Intended hostname: `https://credits.automatingthefuture.com`
-- Preview: `https://credits-automatingthefuture.maurorpv.workers.dev` after first deploy
+## Edit a listing
 
-### Deploy
-
-From this repo:
-
-```bash
-npx wrangler deploy
-```
-
-Wrangler will:
-
-1. Upload the HTML/CSS/JS/JSON as Worker assets
-2. Create DNS + certificate for `credits.automatingthefuture.com` (custom domain)
-3. Publish `credits-automatingthefuture.maurorpv.workers.dev`
-
-Do **not** add a CNAME to `*.github.io`. The Worker custom domain creates the DNS record itself.
-
-### Edit listings
-
-Change `data/programs.json` and bump the date in `app.js`. Redeploy.
+Change `data/programs.json`, rebuild the dedicated page, and refresh the `checked` date when you re-open an official URL. Details: `method.html#maintenance`.
 
 ## License
 
-Content as-is. Program terms belong to the providers.
+Content is provided as-is, no warranty. Program terms belong to the providers.
